@@ -34,7 +34,7 @@ update <task_id> Updated task description
 delete <task_id>
 ```
 
-4. Mark a task as done or As inprogress
+4. Mark a task as done or as inprogress
 
 ```bash
 mark <task_id> inprogress
