@@ -3,8 +3,8 @@
 The Task Tracker CLI is a simple command-line interface application that helps you manage your tasks. Whether you're working on personal projects, studying, or simply keeping track of your to-do list, this tool allows you to:
 
 - Add, update, and delete tasks
-- Mark tasks as "in progress" or "done"
-- List all tasks, all completed tasks, all incomplete tasks, and all tasks in progress
+- Mark tasks as "in-progress" or "done"
+- List all tasks, all completed tasks, all incomplete tasks, and all tasks in-progress
 
 The tasks are stored in a local JSON file, ensuring that your data is preserved between sessions.
 
@@ -34,10 +34,10 @@ update <task_id> Updated task description
 delete <task_id>
 ```
 
-4. Mark a task as done or as inprogress
+4. Mark a task as done or as in-progress
 
 ```bash
-mark <task_id> inprogress
+mark <task_id> in-progress
 mark <task_id> done
 ```
 
@@ -51,7 +51,7 @@ list
 
 ```bash
 list todo
-list inprogress
+list in-progress
 list done
 ```
 

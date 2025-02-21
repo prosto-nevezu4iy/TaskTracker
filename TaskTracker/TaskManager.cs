@@ -59,12 +59,8 @@ public class TaskManager
             Console.WriteLine("Task not found.");
             return;
         }
-        if (status != Status.InProgress.ToString().ToLower() && status != Status.Done.ToString().ToLower())
-        {
-            Console.WriteLine("Invalid status. Use: inprogress, done");
-            return;
-        }
-        task.Status = Enum.Parse<Status>(status, true);
+
+        task.Status = GetStatus(status);
         task.UpdatedAt = DateTime.UtcNow;
         SaveTasks();
         Console.WriteLine($"Task status successfully updated (ID: {id}).");
@@ -75,7 +71,7 @@ public class TaskManager
         IEnumerable<Task> filteredTasks = filter switch
         {
             "todo" => _tasks.Where(t => t.Status == Status.Todo),
-            "inprogress" => _tasks.Where(t => t.Status == Status.InProgress),
+            "in-progress" => _tasks.Where(t => t.Status == Status.InProgress),
             "done" => _tasks.Where(t => t.Status == Status.Done),
             _ => _tasks
         };
@@ -95,5 +91,20 @@ public class TaskManager
     private void SaveTasks()
     {
         File.WriteAllText(_fileName, JsonSerializer.Serialize(_tasks, new JsonSerializerOptions { WriteIndented = true }));
+    }
+
+    private Status GetStatus(string status)
+    {
+        switch (status)
+        {
+            case "todo":
+                return Status.Todo;
+            case "in-progress":
+                return Status.InProgress;
+            case "done":
+                return Status.Done;
+            default:
+                return Status.Todo;
+        }
     }
 }

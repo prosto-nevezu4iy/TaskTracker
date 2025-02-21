@@ -13,8 +13,8 @@ Console.WriteLine("update 1 Clean Room");
 Console.WriteLine("delete 1");
 Console.WriteLine();
 
-Console.WriteLine("# Marking a task as in progress or done");
-Console.WriteLine("mark 1 inprogress");
+Console.WriteLine("# Marking a task as in-progress or done");
+Console.WriteLine("mark 1 in-progress");
 Console.WriteLine("mark 1 done");
 Console.WriteLine();
 
@@ -24,7 +24,7 @@ Console.WriteLine();
 
 Console.WriteLine("# Listing tasks by status");
 Console.WriteLine("list todo");
-Console.WriteLine("list inprogress");
+Console.WriteLine("list in-progress");
 Console.WriteLine("list done");
 Console.WriteLine();
 
