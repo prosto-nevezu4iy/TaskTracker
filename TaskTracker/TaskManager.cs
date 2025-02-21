@@ -95,16 +95,12 @@ public class TaskManager
 
     private Status GetStatus(string status)
     {
-        switch (status)
+        return status switch
         {
-            case "todo":
-                return Status.Todo;
-            case "in-progress":
-                return Status.InProgress;
-            case "done":
-                return Status.Done;
-            default:
-                return Status.Todo;
-        }
+            "todo" => Status.Todo,
+            "in-progress" => Status.InProgress,
+            "done" => Status.Done,
+            _ => Status.Todo
+        };
     }
 }
